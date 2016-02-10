@@ -23,15 +23,21 @@
     });
 
     $app->get("/food", function() use ($app) {
+
       $current_tamagotchi = Tamagotchi::getAll();
       $current_tamagotchi[0]->setFood(10);
       $food = $current_tamagotchi[0]->getFood();
       $sleep = $current_tamagotchi[0]->getSleep();
       $attention = $current_tamagotchi[0]->getAttention();
+
+      if ($sleep == 0 || $attention == 0) {
+        return $app['twig']->render('dead.html.twig');
+      } else {
       $current_tamagotchi[0]->setFood($food + 1);
       $current_tamagotchi[0]->setSleep($sleep - 1);
       $current_tamagotchi[0]->setAttention($attention - 1);
       return $app['twig']->render('create_food.html.twig');
+      }
     });
 
     $app->get("/attention", function() use ($app) {
@@ -40,10 +46,15 @@
       $food = $current_tamagotchi[0]->getFood();
       $sleep = $current_tamagotchi[0]->getSleep();
       $attention = $current_tamagotchi[0]->getAttention();
-      $current_tamagotchi[0]->setFood($food - 1);
-      $current_tamagotchi[0]->setSleep($sleep - 1);
-      $current_tamagotchi[0]->setAttention($attention + 1);
-      return $app['twig']->render('create_attention.html.twig');
+
+      if ($sleep == 0 || $food == 0) {
+        return $app['twig']->render('dead.html.twig');
+      } else {
+        $current_tamagotchi[0]->setFood($food - 1);
+        $current_tamagotchi[0]->setSleep($sleep - 1);
+        $current_tamagotchi[0]->setAttention($attention + 1);
+        return $app['twig']->render('create_attention.html.twig');
+      }
     });
 
     $app->get("/sleep", function() use ($app) {
@@ -52,10 +63,15 @@
       $food = $current_tamagotchi[0]->getFood();
       $sleep = $current_tamagotchi[0]->getSleep();
       $attention = $current_tamagotchi[0]->getAttention();
-      $current_tamagotchi[0]->setFood($food - 1);
-      $current_tamagotchi[0]->setSleep($sleep + 1);
-      $current_tamagotchi[0]->setAttention($attention - 1);
-      return $app['twig']->render('create_sleep.html.twig');
+
+      if ($sleep == 0 || $food == 0) {
+        return $app['twig']->render('dead.html.twig');
+      } else {
+        $current_tamagotchi[0]->setFood($food - 1);
+        $current_tamagotchi[0]->setSleep($sleep + 1);
+        $current_tamagotchi[0]->setAttention($attention - 1);
+        return $app['twig']->render('create_sleep.html.twig');
+      }
     });
 
     $app->post('/delete_attr', function() use ($app){
