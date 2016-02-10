@@ -20,19 +20,25 @@
       <img src="http://www.slacktory.com/wp-content/uploads/2012/11/dead-sick-tamagotchi.jpg">
     {% endif %}
 
-    <form action='/attributes' method='post'>
+    <form action='/name' method='post'>
         <label for='name'>Name</label>
         <input id='name' name='name' type='text'>
-        <label for='food'>Food</label>
+      <!--   <label for='food'>Food</label>
         <input id='food' name='food' type='text'>
         <label for='attention'>Attention</label>
         <input id='attention' name='attention' type='text'>
         <label for='sleep'>Sleep</label>
-        <input id='sleep' name='sleep' type='text'>
+        <input id='sleep' name='sleep' type='text'> -->
 
-        <button type='submit'>Add food</button>
+        <button type='submit'>Set Name</button>
     </form>
-    <form action='/sleep' method='post'>
+    <form action='/food' method='get'>
+      <button type="submit">Food</button>
+    </form>
+    <form action='/attention' method='get'>
+      <button type="submit">Attention</button>
+    </form>
+    <form action='/sleep' method='get'>
       <button type="submit">Sleep</button>
     </form>
     <form action='/delete_attr' method='post'>

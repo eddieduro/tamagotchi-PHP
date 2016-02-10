@@ -8,11 +8,11 @@
     private $attention;
     private $sleep;
 
-    function __construct($name, $food, $attention, $sleep){
+    function __construct($name){
       $this->name = $name;
-      $this->food = $food;
-      $this->attention = $attention;
-      $this->sleep = $sleep;
+      $this->food = 10;
+      $this->attention = 10;
+      $this->sleep = 10;
     }
     function getName()
     {
@@ -24,6 +24,11 @@
       return $this->food;
     }
 
+    function setAttention($newAttention)
+    {
+      return $this->attention = $newAttention;
+    }
+
     function setFood($newFood)
     {
       $this->food = $newFood;
@@ -33,9 +38,15 @@
       return $this->attention;
     }
 
+
     function getSleep()
     {
       return $this->sleep;
+    }
+
+    function setSleep($newSleep)
+    {
+      $this->sleep = $newSleep;
     }
 
     function save()
