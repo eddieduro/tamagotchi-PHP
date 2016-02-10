@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Places</title>
+</head>
+<body>
+    <h1>Places To Go</h1>
+    <form action='/places' method='post'>
+        <label for='city'>Enter City</label>
+        <input id='city' name='city' type='text'>
+    <button type='submit'>Add task</button>
+    </form>
+
+    {% if places is not empty %}
+        {% for place in places %}
+            <p>{{ place.getCity }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form action='/delete_place' method='post'>
+        <button type='submit'>Delete All</button>
+    </form>
+</body>
+</html>
