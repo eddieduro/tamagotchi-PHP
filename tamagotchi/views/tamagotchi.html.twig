@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Tamagotchi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>Tamagotchi</h1>
+
 
       {% for attribute in attributes%}
       <ul>
@@ -22,29 +25,35 @@
     {% if attribute.food == 9 %}
       <p>game over</p>
     {% endif %}
-    <form action='/name' method='post'>
-        <label for='name'>Name</label>
-        <input id='name' name='name' type='text'>
-      <!--   <label for='food'>Food</label>
-        <input id='food' name='food' type='text'>
-        <label for='attention'>Attention</label>
-        <input id='attention' name='attention' type='text'>
-        <label for='sleep'>Sleep</label>
-        <input id='sleep' name='sleep' type='text'> -->
+    <div class="container">
+      <div class="row">
+        <form action='/name' method='post' class="col s10">
+            <label for='name'>Name</label>
+            <input id='name' name='name' type='text'>
+            <button type='submit' class="waves-effect waves-light btn col s12" id="tamagotchiName">Set Name</button>
+        </form>
+      </div>
+    </div>
 
-        <button type='submit'>Set Name</button>
-    </form>
-    <form action='/food' method='get'>
-      <button type="submit">Food</button>
-    </form>
-    <form action='/attention' method='get'>
-      <button type="submit">Attention</button>
-    </form>
-    <form action='/sleep' method='get'>
-      <button type="submit">Sleep</button>
-    </form>
-    <form action='/delete_attr' method='post'>
-        <button type='submit'>DELETE</button>
-    </form>
+
+    <div class="row">
+      <form action='/food' method='get' class="col l3">
+        <button type="submit" class="waves-effect waves-light btn">Food</button>
+      </form>
+      <form action='/attention' method='get' class="col l3">
+        <button type="submit" class="waves-effect waves-light btn">Attention</button>
+      </form>
+
+      <form action='/sleep' method='get' class="col l3">
+        <button type="submit" class="waves-effect waves-light btn">Sleep</button>
+      </form>
+      <form action='/delete_attr' method='post' class="col l3">
+          <button type='submit' class="waves-effect waves-light btn">DELETE</button>
+      </form>
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </body>
 </html>
