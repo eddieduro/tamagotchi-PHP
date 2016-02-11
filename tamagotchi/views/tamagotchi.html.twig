@@ -4,23 +4,24 @@
     <meta charset="utf-8">
     <title>Tamagotchi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
   </head>
   <body>
-    <h1>Tamagotchi</h1>
+    <h1 class="center-align">Tamagotchi</h1>
 
 
       {% for attribute in attributes%}
-      <ul>
-        <li>{{attribute.getName}}</li>
-        <li>{{attribute.getFood}}</li>
-        <li>{{attribute.getAttention}}</li>
-        <li>{{attribute.getSleep}}</li>
+      <ul class="center-align">
+        <li> Name: {{attribute.getName}}</li>
+        <li> Food: {{attribute.getFood}}</li>
+        <li> Attention: {{attribute.getAttention}}</li>
+        <li> Sleep: {{attribute.getSleep}}</li>
       </ul>
       {% endfor %}
     {%if attributes is empty %}
-      <h1>Enter a Name to start</h1>
-
+      <h1 class="center-align">Enter a Name to start</h1>
+      <div class="hero">
+      </div>
     {% endif %}
     {% if attribute.food == 9 %}
       <p>game over</p>

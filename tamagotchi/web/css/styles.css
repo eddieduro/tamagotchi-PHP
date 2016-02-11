@@ -1,0 +1,31 @@
+html{
+  background-color:;
+}
+
+.hero{
+  background: url('https://media.giphy.com/media/EY6LXfTWRQHzG/giphy.gif');
+  background-size: contain;
+  height: 500px;
+  width: 100%;
+}
+
+.eating{
+  background: url('https://media.giphy.com/media/12uXi1GXBibALC/giphy.gif');
+  background-size: contain;
+  height: 500px;
+  width: 100%;
+}
+
+.sleep{
+  background: url('https://media.giphy.com/media/TGdx57iPCSOkg/giphy.gif');
+  background-size: contain;
+  height: 500px;
+  width: 100%;
+}
+
+.play{
+  background: url('https://media.giphy.com/media/R5HIbrHKWGnfO/giphy.gif');
+  background-size: contain;
+  height: 500px;
+  width: 100%;
+}
